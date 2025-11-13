@@ -69,6 +69,15 @@
         background-color: #eef2ff;
         color: #1e3a8a;
     }
+    #btnD {
+        font-size: 10px;
+        position: absolute; top: 500px; left: 2%; width: 96%; height: 40px;
+    }
+    #btnE {
+        font-size: 10px;
+        position: absolute; top: 545px; left: 2%; width: 96%; height: 40px;
+    }
+
     
     #minute {
         font-size: 30px;

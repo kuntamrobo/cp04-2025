@@ -42,6 +42,9 @@
         $('#btnD').click(function(e) { 
             btnDClick(e); 
         });
+        $('#btnE').click(function(e) {
+            btnEClick(e); 
+        });
 
         init();
     });
@@ -219,6 +222,12 @@
         active = true;
         startTime = new Date();
     }
+    function btnEClick(e){
+        alert('1分に設定しました');
+        $('#minute').val(1);
+        $('#second').val(0);
+        btnCClick(e);
+    }
 }
 
     
@@ -252,6 +261,7 @@
     <button id="btnB">停止</button>  
     <button id="btnC">設定</button>  
     <button id="btnD">再開</button>
+    <button id="btnE">1分セット</button>
     <input type="number" id="minute" value=3 >
     <input type="number" id="second" value=0 >
 </body>
