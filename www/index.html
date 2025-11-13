@@ -38,6 +38,11 @@
         $('#btnC').click(function(e) {
             btnCClick(e);
         });
+
+        $('#btnD').click(function(e) { 
+            btnDClick(e); 
+        });
+
         init();
     });
     
@@ -162,7 +167,7 @@
         $('#btnA').prop('disabled', false);
         $('#btnB').prop('disabled', false);
         $('#btnC').prop('disabled', false);
-        
+        $('#btnD').prop('disabled', false);
     }
 
     // Alarmの処理
@@ -186,7 +191,6 @@
         alert('開始ボタンを押しました');
       active = true;
       startTime = new Date();
-      $("#btnB").text("停止")
     }
 
     // ButtonBがクリックされた時の処理
@@ -194,11 +198,6 @@
         alert('停止/再開ボタンを押しました');
          active = false;
          period = rest;
-         $("#btnB").text("再開");
-    }else{
-         active = true;
-         period = rest;
-         $("#btnB").text("停止");
         
     }
 
@@ -211,6 +210,17 @@
         $("#time").html("経過時間：" + 0);
         $("#remain").html("残り時間：" + period);
     }
+
+    function btnDClick(e){
+    alert('再開ボタンを押しました');
+    if (active) return;
+    if (rest > 0) {
+        period = rest;
+        active = true;
+        startTime = new Date();
+    }
+}
+
     
  
     // 繰り返し実行する処理
@@ -223,7 +233,7 @@
            $("#remain").html("残り時間：" + rest);
            analog(rest); 
            if(rest<=0){
-           actie = false;
+           active = false;
            alarm();
        }
     } 
@@ -241,6 +251,7 @@
     <button id="btnA">開始</button>  
     <button id="btnB">停止</button>  
     <button id="btnC">設定</button>  
+    <button id="btnD">再開</button>
     <input type="number" id="minute" value=3 >
     <input type="number" id="second" value=0 >
 </body>
