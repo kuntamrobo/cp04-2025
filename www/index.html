@@ -183,6 +183,7 @@
     
     // ButtonAがクリックされた時の処理
     function btnAClick(e){
+        alert('開始ボタンを押しました');
       active = true;
       startTime = new Date();
       $("#btnB").text("停止")
@@ -190,6 +191,7 @@
 
     // ButtonBがクリックされた時の処理
     function btnBClick(e){
+        alert('停止/再開ボタンを押しました');
          active = false;
          period = rest;
          $("#btnB").text("再開");
@@ -202,6 +204,7 @@
 
     // ButtonCがクリックされた時の処理
     function btnCClick(e){
+        alert('設定ボタンを押しました');
         alarm();
         active = false;
         period = 60 * (parseInt($("#minute").val(), 10) || 0) + ((parseInt($("#second").val(), 10) || 0));
