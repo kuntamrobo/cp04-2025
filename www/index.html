@@ -185,11 +185,18 @@
     function btnAClick(e){
       active = true;
       startTime = new Date();
+      $("#btnB").text("停止")
     }
 
     // ButtonBがクリックされた時の処理
     function btnBClick(e){
          active = false;
+         period = rest;
+         $("#btnB").text("再開");
+    }else{
+         active = true;
+         period = rest;
+         $("#btnB").text("停止");
         
     }
 
