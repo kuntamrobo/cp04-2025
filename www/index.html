@@ -197,7 +197,7 @@
     function btnCClick(e){
         alarm();
         active = false;
-        period = 60 * parseInt($("#minute").val()) + parseInt($("#second").val());
+        period = 60 * (parseInt($("#minute").val(), 10) || 0) + ((parseInt($("#second").val(), 10) || 0));
         $("#time").html("経過時間：" + 0);
         $("#remain").html("残り時間：" + period);
     }
@@ -208,12 +208,11 @@
        if (active == true) {
            etime = parseInt((new Date() - startTime) / 1000);
            rest = period - etime;
+           if (rest < 0) rest =0;
            $("#time").html("経過時間：" + etime);
            $("#remain").html("残り時間：" + rest);
            analog(rest); 
-       }
-
-       if(rest<=0){
+           if(rest<=0){
            actie = false;
            alarm();
        }
